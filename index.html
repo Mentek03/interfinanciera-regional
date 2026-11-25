@@ -15,6 +15,31 @@
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 img{max-width:100%}
 [hidden]{display:none!important}
+  
+body{margin:0;font-family:'Inter',system-ui,sans-serif;color:#14233A;background:#ffffff}
+h1,h2,h3,h4{font-family:'Space Grotesk','Inter',system-ui,sans-serif;text-wrap:balance;margin:0}
+p{margin:0}
+ul{margin:0;padding:0;list-style:none}
+a{color:#244C7C;text-decoration:none}
+a:hover{color:#306094}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #306094;outline-offset:2px}
+
+.vp-scene{position:absolute;inset:0;opacity:0;animation:vpScene 25s linear infinite both;animation-play-state:var(--vps,running)}
+.vp-rise,.vp-fade{opacity:0;animation-duration:25s;animation-iteration-count:infinite;animation-fill-mode:both;animation-play-state:var(--vps,running)}
+.vp-rise{animation-name:vpRise;animation-timing-function:cubic-bezier(.2,.7,.2,1)}
+.vp-fade{animation-name:vpFade}
+@keyframes vpScene{0%{opacity:0}2%{opacity:1}18%{opacity:1}20%,100%{opacity:0}}
+@keyframes vpRise{0%{opacity:0;transform:translateY(6%)}2.4%{opacity:1;transform:none}18%{opacity:1;transform:none}20%,100%{opacity:0;transform:none}}
+@keyframes vpFade{0%{opacity:0}2.4%{opacity:1}18%{opacity:1}20%,100%{opacity:0}}
+.vp-panel{aspect-ratio:16/9}
+.vp-ctls{display:flex;flex-wrap:wrap;gap:8px}
+@media (max-width:560px){.mx-lbl{display:none}.vp-panel{aspect-ratio:4/3;--k:1.25}}
+@media (prefers-reduced-motion:reduce){.vp-scene,.vp-rise,.vp-fade{animation:none}.vp-s1{opacity:1}.vp-s1 .vp-rise{opacity:1}.vp-ctl,.vp-ctls{display:none}}
+
+</style>
+</head>
+<body style="margin:0">
+  // Consulta de FB
 <script>
 (function () {
   // AQUÍ VA EL TOKEN - usa el token LARGO de página, no el de usuario
@@ -58,30 +83,6 @@ img{max-width:100%}
     });
 })();
 </script>
-body{margin:0;font-family:'Inter',system-ui,sans-serif;color:#14233A;background:#ffffff}
-h1,h2,h3,h4{font-family:'Space Grotesk','Inter',system-ui,sans-serif;text-wrap:balance;margin:0}
-p{margin:0}
-ul{margin:0;padding:0;list-style:none}
-a{color:#244C7C;text-decoration:none}
-a:hover{color:#306094}
-a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #306094;outline-offset:2px}
-
-.vp-scene{position:absolute;inset:0;opacity:0;animation:vpScene 25s linear infinite both;animation-play-state:var(--vps,running)}
-.vp-rise,.vp-fade{opacity:0;animation-duration:25s;animation-iteration-count:infinite;animation-fill-mode:both;animation-play-state:var(--vps,running)}
-.vp-rise{animation-name:vpRise;animation-timing-function:cubic-bezier(.2,.7,.2,1)}
-.vp-fade{animation-name:vpFade}
-@keyframes vpScene{0%{opacity:0}2%{opacity:1}18%{opacity:1}20%,100%{opacity:0}}
-@keyframes vpRise{0%{opacity:0;transform:translateY(6%)}2.4%{opacity:1;transform:none}18%{opacity:1;transform:none}20%,100%{opacity:0;transform:none}}
-@keyframes vpFade{0%{opacity:0}2.4%{opacity:1}18%{opacity:1}20%,100%{opacity:0}}
-.vp-panel{aspect-ratio:16/9}
-.vp-ctls{display:flex;flex-wrap:wrap;gap:8px}
-@media (max-width:560px){.mx-lbl{display:none}.vp-panel{aspect-ratio:4/3;--k:1.25}}
-@media (prefers-reduced-motion:reduce){.vp-scene,.vp-rise,.vp-fade{animation:none}.vp-s1{opacity:1}.vp-s1 .vp-rise{opacity:1}.vp-ctl,.vp-ctls{display:none}}
-
-</style>
-</head>
-<body style="margin:0">
-
 
 <div style="background:#ffffff">
 
