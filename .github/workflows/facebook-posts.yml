@@ -1,0 +1,28 @@
+name: Actualizar publicaciones de Facebook
+on:
+  schedule:
+    - cron: '0 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  update-posts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Descargar publicaciones de Facebook
+        env:
+          FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+        run: |
+          curl -s --fail -G "https://graph.facebook.com/v27.0/1553288817860397/posts" \
+            --data-urlencode "fields=id,message,created_time,permalink_url,full_picture" \
+            --data-urlencode "limit=6" \
+            --data-urlencode "access_token=${FB_PAGE_TOKEN}" \
+            -o posts.json
+      - name: Publicar posts.json si cambió
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add posts.json
+          git diff --cached --quiet || git commit -m "Actualizar publicaciones de Facebook"
+          git push
