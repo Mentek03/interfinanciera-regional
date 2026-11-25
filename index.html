@@ -22,7 +22,7 @@ p{margin:0}
 ul{margin:0;padding:0;list-style:none}
 a{color:#244C7C;text-decoration:none}
 a:hover{color:#306094}
-a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #306094;outline-offset:2px}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px sol #306094;outline-offset:2px}
 
 .vp-scene{position:absolute;inset:0;opacity:0;animation:vpScene 25s linear infinite both;animation-play-state:var(--vps,running)}
 .vp-rise,.vp-fade{opacity:0;animation-duration:25s;animation-iteration-count:infinite;animation-fill-mode:both;animation-play-state:var(--vps,running)}
@@ -33,7 +33,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 @keyframes vpFade{0%{opacity:0}2.4%{opacity:1}18%{opacity:1}20%,100%{opacity:0}}
 .vp-panel{aspect-ratio:16/9}
 .vp-ctls{display:flex;flex-wrap:wrap;gap:8px}
-@media (max-width:560px){.mx-lbl{display:none}.vp-panel{aspect-ratio:4/3;--k:1.25}}
+@media (max-wth:560px){.mx-lbl{display:none}.vp-panel{aspect-ratio:4/3;--k:1.25}}
 @media (prefers-reduced-motion:reduce){.vp-scene,.vp-rise,.vp-fade{animation:none}.vp-s1{opacity:1}.vp-s1 .vp-rise{opacity:1}.vp-ctl,.vp-ctls{display:none}}
 
 </style>
@@ -44,10 +44,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 <div style="background:#ffffff">
 
 <!-- NAV -->
-<header style="background:#ffffff;border-bottom:1px solid #D6DFEA">
-<div style="max-width:1200px;margin:0 auto;padding:14px 32px;box-sizing:border-box;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 32px">
+<header style="background:#ffffff;border-bottom:1px sol #D6DFEA">
+<div style="max-wth:1200px;margin:0 auto;padding:14px 32px;box-sizing:border-box;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 32px">
 <a href="#inicio" aria-label="Interfinanciera Regional, inicio" style="display:block">
-<img src="assets/logo.png" alt="Interfinanciera Regional" style="display:block;height:50px;width:auto;max-width:100%">
+<img src="assets/logo.png" alt="Interfinanciera Regional" style="display:block;height:50px;wth:auto;max-wth:100%">
 </a>
 <nav aria-label="Principal" style="display:flex;flex-wrap:wrap;gap:0 28px;font-size:15px;font-weight:500">
 <a href="#nosotros" style="display:inline-block;padding:13px 0;color:#14233A">Compañía</a>
@@ -60,7 +60,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 </header>
 
 <!-- HERO -->
-<section id="inicio" style="position:relative;overflow:hidden;background:#183C68;color:#ffffff">
+<section ="inicio" style="position:relative;overflow:hidden;background:#183C68;color:#ffffff">
 <svg aria-hidden="true" width="760" height="760" viewBox="0 0 760 760" fill="none" style="position:absolute;left:-260px;bottom:-420px;max-width:none">
 <circle cx="380" cy="380" r="150" stroke="#306094" stroke-width="1.5"></circle>
 <circle cx="380" cy="380" r="230" stroke="#306094" stroke-width="1.5"></circle>
@@ -314,7 +314,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 <script>
 (function () {
   // AQUÍ VA EL TOKEN - usa el token LARGO de página, no el de usuario
-  var FB_PAGE_ID = '161516070564222';
+  var FB_PAGE_ID = '1553288817860397';
   var FB_ACCESS_TOKEN = 'EAAQCcUkGUPUBTO63ePr49ui8qglzjo648Xpx1Y4eRFQjuDPwnXdoDtGZAahDJFRPNDD0aZA0xeuEESThSi6uKv3uiP6yUSNzJZCoydHdVE7oQctRwApAcFOGAFtzkZCjLSAiFcLjQHJ52O1zYHDnZAKa9NqBvYDuEJ9St0D15vm1zuvgjERbKq2q5ZCHu8C70PFpYE2FLepoanxWnPnBXh';
 
   var container = document.getElementById('fb-feed');
