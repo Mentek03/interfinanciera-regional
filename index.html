@@ -15,7 +15,49 @@
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 img{max-width:100%}
 [hidden]{display:none!important}
+<script>
+(function () {
+  // AQUÍ VA EL TOKEN - usa el token LARGO de página, no el de usuario
+  var FB_PAGE_ID = '1553288817860397';
+  var FB_ACCESS_TOKEN = 'EAAQCcUkGUPUBTGRUQH7Dm5KhnZBUpDkZAKLMwDp62q2gy23rJm1AvZA6Lw8Bg1n9MWv0yd5ZBwa1WeJvMZB5WmSi7bYBx3xXZC6F6UFdld20NTm9idYjjEvmuxnwyLL5IqpQD0TW3ekxj835fXSQFRs8I41Eahe0tnFiAqIDG70DEPoMBLDT0H6MZBe54l4SetKqhVMEYo6qHt1rzMzTlsB';
 
+  var container = document.getElementById('fb-feed');
+  if (!container) return;
+
+  var url = 'https://graph.facebook.com/v27.0/' + FB_PAGE_ID +
+    '/posts?fields=id,message,created_time,permalink_url,full_picture&limit=6&access_token=' + FB_ACCESS_TOKEN;
+
+  fetch(url)
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      if (data.error || !data.data || !data.data.length) {
+        container.textContent = 'No se pudieron cargar las publicaciones.';
+        return;
+      }
+      container.innerHTML = '';
+      data.data.forEach(function (post) {
+        var fecha = new Date(post.created_time).toLocaleDateString('es-MX', { day: 'numeric', month: 'long', year: 'numeric' });
+        var card = document.createElement('article');
+        card.style.cssText = 'border-top:3px solid #244C7C;padding-top:16px;display:flex;flex-direction:column;gap:10px';
+
+        var html = '<p style="font-size:13px;color:#626C7C">' + fecha + '</p>';
+        if (post.full_picture) {
+          html += '<img src="' + post.full_picture + '" alt="" style="width:100%;border-radius:8px">';
+        }
+        if (post.message) {
+          html += '<p style="font-size:15px;line-height:1.6;color:#14233A">' + post.message.replace(/</g, '&lt;') + '</p>';
+        }
+        html += '<a href="' + post.permalink_url + '" target="_blank" rel="noopener" style="font-size:14px;font-weight:600;color:#244C7C">Ver en Facebook</a>';
+
+        card.innerHTML = html;
+        container.appendChild(card);
+      });
+    })
+    .catch(function () {
+      container.textContent = 'No se pudieron cargar las publicaciones.';
+    });
+})();
+</script>
 body{margin:0;font-family:'Inter',system-ui,sans-serif;color:#14233A;background:#ffffff}
 h1,h2,h3,h4{font-family:'Space Grotesk','Inter',system-ui,sans-serif;text-wrap:balance;margin:0}
 p{margin:0}
@@ -309,8 +351,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 <p style="font-size:16px;line-height:1.6;color:#626C7C;max-width:480px">Entérate de las novedades, la educación financiera y los avisos de Interfinanciera Regional directamente en nuestra página.</p>
 <a href="https://www.facebook.com/people/Interfinanciera-Regional/61596513885969/" target="_blank" rel="noopener" style="display:inline-block;align-self:flex-start;padding:14px 22px;border-radius:6px;font-size:15px;font-weight:600;background:#244C7C;color:#ffffff">Visitar nuestra página</a>
 </div>
-<div style="flex:1 1 360px;min-width:0;box-sizing:border-box;min-height:320px;background:#ffffff;border:1.5px dashed #7F90A6;border-radius:10px;padding:24px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:14px;line-height:1.6;color:#626C7C">[AQUÍ SE MOSTRARÁN LAS PUBLICACIONES DE LA PÁGINA DE FACEBOOK]</div>
-</div>
+<div id="fb-feed" style="flex:1 1 360px;min-width:0;box-sizing:border-box;background:#ffffff;border-radius:10px;padding:24px;display:flex;flex-direction:column;gap:20px">Cargando publicaciones...</div></div>
 </section>
 
 <!-- REGULADORES -->
