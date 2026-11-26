@@ -121,7 +121,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 </section>
 
 <!-- QUIENES SOMOS -->
-<section id="nosotros" style="background:#ffffff">
+<section id="nosotros" style="background-color:#ffffff;background-image:linear-gradient(rgba(255,255,255,0.92),rgba(255,255,255,0.92)),url('assets/quienes-somos.jpg');background-size:cover;background-position:center">
 <div style="max-width:1200px;margin:0 auto;padding:80px 32px;box-sizing:border-box;display:flex;flex-direction:column;gap:48px">
 <div style="display:flex;flex-wrap:wrap;align-items:center;gap:40px 56px">
 <div style="flex:1 1 460px;min-width:0;display:flex;flex-direction:column;gap:20px">
@@ -130,9 +130,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 <p style="font-size:17px;line-height:1.65;color:#14233A">Nacimos con la convicción de que el financiamiento debe ser una herramienta para crecer, no un obstáculo. Hoy operamos en ocho estados —Nuevo León, Jalisco, San Luis Potosí, Ciudad de México, Yucatán, Baja California, Puebla y Chiapas— con un equipo que conoce a sus clientes y los acompaña de principio a fin.</p>
 </div>
 <div style="flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:16px">
-<div style="box-sizing:border-box;background:#F2F5F9;border-radius:10px;padding:22px 26px;display:flex;flex-direction:column;gap:8px"><h3 style="font-size:20px;font-weight:700;color:#244C7C">Misión</h3><p style="font-size:15px;line-height:1.6;color:#626C7C">Impulsar el desarrollo de las empresas de la región con soluciones de financiamiento accesibles, transparentes y oportunas.</p></div>
-<div style="box-sizing:border-box;background:#F2F5F9;border-radius:10px;padding:22px 26px;display:flex;flex-direction:column;gap:8px"><h3 style="font-size:20px;font-weight:700;color:#244C7C">Visión</h3><p style="font-size:15px;line-height:1.6;color:#626C7C">Ser la financiera de referencia en la región, reconocida por la confianza de sus clientes y por el crecimiento de las empresas que acompaña.</p></div>
-<div style="box-sizing:border-box;background:#F2F5F9;border-radius:10px;padding:22px 26px;display:flex;flex-direction:column;gap:8px"><h3 style="font-size:20px;font-weight:700;color:#244C7C">Valores</h3><p style="font-size:15px;line-height:1.6;color:#626C7C">Confianza, transparencia, cercanía y compromiso con el desarrollo regional.</p></div>
+<div style="box-sizing:border-box;background-color:#F2F5F9;background-image:linear-gradient(rgba(242,245,249,0.88),rgba(242,245,249,0.88)),url('assets/mision.jpg');background-size:cover;background-position:center;border-radius:10px;padding:22px 26px;display:flex;flex-direction:column;gap:8px"><h3 style="font-size:20px;font-weight:700;color:#244C7C">Misión</h3><p style="font-size:15px;line-height:1.6;color:#626C7C">Impulsar el desarrollo de las empresas de la región con soluciones de financiamiento accesibles, transparentes y oportunas.</p></div>
+<div style="box-sizing:border-box;background-color:#F2F5F9;background-image:linear-gradient(rgba(242,245,249,0.88),rgba(242,245,249,0.88)),url('assets/vision.jpg');background-size:cover;background-position:center;border-radius:10px;padding:22px 26px;display:flex;flex-direction:column;gap:8px"><h3 style="font-size:20px;font-weight:700;color:#244C7C">Visión</h3><p style="font-size:15px;line-height:1.6;color:#626C7C">Ser la financiera de referencia en la región, reconocida por la confianza de sus clientes y por el crecimiento de las empresas que acompaña.</p></div>
+<div style="box-sizing:border-box;background-color:#F2F5F9;background-image:linear-gradient(rgba(242,245,249,0.88),rgba(242,245,249,0.88)),url('assets/valores.jpg');background-size:cover;background-position:center;border-radius:10px;padding:22px 26px;display:flex;flex-direction:column;gap:8px"><h3 style="font-size:20px;font-weight:700;color:#244C7C">Valores</h3><p style="font-size:15px;line-height:1.6;color:#626C7C">Confianza, transparencia, cercanía y compromiso con el desarrollo regional.</p></div>
 </div>
 </div>
 <div style="box-sizing:border-box;background:#183C68;border-radius:10px;padding:36px;display:flex;flex-wrap:wrap;align-items:flex-start;gap:28px 48px">
@@ -288,8 +288,12 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 </section>
 
 <!-- PRESENCIA -->
-<section id="presencia" style="background:#F2F5F9">
-<div style="max-width:1200px;margin:0 auto;padding:80px 32px;box-sizing:border-box;display:flex;flex-wrap:wrap;align-items:center;gap:40px 56px">
+<section id="presencia" style="position:relative;overflow:hidden;background:linear-gradient(135deg,#F2F4F7 0%,#D5DAE1 22%,#AEB6C2 38%,#E9EDF1 52%,#C2C9D3 68%,#9AA3B0 84%,#DDE2E8 100%)">
+<div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none">
+<div style="position:absolute;right:-40px;top:50%;transform:translateY(-50%);width:380px;height:380px"><img src="assets/logo-marca.png" alt="" style="display:block;width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;opacity:0.35"></div>
+<div style="position:absolute;left:-120px;top:-80px;width:420px;height:130%;background:linear-gradient(160deg,rgba(255,255,255,0.5),rgba(255,255,255,0.05));transform:skewX(-18deg)"></div>
+</div>
+<div style="position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:80px 32px;box-sizing:border-box;display:flex;flex-wrap:wrap;align-items:center;gap:40px 56px">
 <div style="flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:20px">
 <p style="font-size:13px;letter-spacing:0.16em;text-transform:uppercase;color:#626C7C;font-weight:600">Presencia</p>
 <h2 style="font-size:clamp(28px,3.4vw,40px);line-height:1.1;font-weight:700;color:#244C7C">Estamos en ocho estados del país</h2>
